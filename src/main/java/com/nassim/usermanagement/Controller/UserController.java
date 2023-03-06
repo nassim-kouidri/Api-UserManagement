@@ -19,7 +19,7 @@ import java.util.Optional;
 public class UserController {
 
     @Autowired
-    UserService userService;
+    public  UserService userService;
 
     @GetMapping("/allUsers")
     public List<UserModel> findAllUser() {
@@ -123,5 +123,10 @@ public class UserController {
         String messageError = "l'utilisateur n'existe pas";
         return new ResponseEntity<>(messageError, HttpStatus.NOT_FOUND) ;
 
+    }
+
+    @GetMapping("/helloworld")
+    public String  hello() {
+        return userService.HelloWord();
     }
 }

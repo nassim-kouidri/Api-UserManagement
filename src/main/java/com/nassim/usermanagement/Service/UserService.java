@@ -87,5 +87,8 @@ public class UserService {
         return userModel;
     }
 
+    public String HelloWord(){
+        return  "Hello World";
+    }
 
 }

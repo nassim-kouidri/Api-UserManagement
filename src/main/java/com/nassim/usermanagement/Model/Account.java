@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -26,6 +28,9 @@ public class Account {
     @Column(name = "email", unique = true)
     private String email;
     private String password;
+
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL) //garantit que lorsque vous supprimez un Account, tous les Post associés seront également supprimés.
+    private List<Post> posts = new ArrayList<>();
 
 
 }

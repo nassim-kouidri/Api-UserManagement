@@ -35,8 +35,5 @@ public class ImageController {
 
     }
 
-    @GetMapping("/helloworld/{id}")
-    public String hello(@PathVariable Long id) {
-        return"Hello World!";
-    }
+
 }
